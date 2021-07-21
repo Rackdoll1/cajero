@@ -1,0 +1,95 @@
+:root {
+  --blueFondo: #d0e3ec;
+}
+/* Estructura general */
+body {
+  margin: 0;
+  width: 100vw;
+  background-color: var(--blueFondo);
+  font-family: sans-serif;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+
+  grid-template-rows: auto auto 1fr;
+}
+
+/* Bienvenida al usuario */
+header {
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: solid 20px #677eb6;
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin: 25px 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+.esquinas-header {
+  width: 15vw;
+  text-align: center;
+}
+
+.header-img {
+  width: 45px;
+}
+
+/* instrucciones */
+.instrucciones {
+  text-align: center;
+  padding-top: 4vh;
+}
+
+.instrucciones p {
+  font-size: 2rem
+}
+
+/* operaciones disponibles al usuario */
+main {
+  display: flex;
+  justify-content: space-between;
+  margin: 5vh 0;
+}
+
+.left-container {
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+}
+
+.right-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 25vw;
+}
+
+.boton-operacion {
+  min-width: 50%;
+  width: 80%;
+  height: 15%;
+
+  margin: 40px 30px;
+  padding: 0;
+
+  box-shadow: 0 4px 2px -2px gray;
+  border: solid 1px gray;
+  border-radius: 6px;
+
+  font-size: 1.5rem;
+
+}
+
+.boton-operacion:hover {
+  background-color: rgb(212, 212, 212)
+}
