@@ -7,7 +7,7 @@
     <title>Cajero</title>
   </head>
   <body>
-    <div class="div-body">
+    <div id="div-body">
       <div id="contenedorPrincipal">
 
       <center>
@@ -31,12 +31,17 @@
       <button class='button' type="button" id="guardar">ENTER</button>
       <br>
     </div>
+    <footer>
+      <p class="text-center">Copyright @2021 | Designed  by <a href="#">Andres & Yann Company</a></p>
+    </footer>
+  </div>
+
     <div class="container">
       <header>
         <div class="esquinas-header">
           <h2>Super Bank</h2>
         </div>
-        <h1>Bienvenido Usuario</h1>
+        <h1 id="bienvenida">Bienvenido Usuario</h1>
         <div class="esquinas-header">
           <img class="header-img" src="images/banco.png" alt="Logotipo banco">
         </div>
@@ -65,13 +70,15 @@
     </div>
 
 
-
-    <footer>
-      <p class="text-center">Copyright @2021 | Designed  by <a href="#">Andres & Yann Company</a></p>
-    </footer>
-
-    <div class="operacion-en-curso">
-      <div class="texto1">Operacion</div>
+    <div id="operacion-en-curso" class="hide">
+        <div id="nombre-operacion"></div>
+        <div id="instrucciones-operacion">
+          <!-- <input id="input-operacion-cajero" type="number" placeholder="Numero de Cuenta" min="1"> -->
+        </div>
+        <div class="div-confirmar">
+          <!-- <button id="boton-confirmar" class="boton-confirmar">Confirmar</button> -->
+          <button id="boton-cancelar" class="boton-confirmar">Cancelar</button>
+        </div>
     </div>
 
     <script src="cajero.js"></script>

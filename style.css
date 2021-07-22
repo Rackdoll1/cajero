@@ -17,6 +17,7 @@ body {
   width: 100vw;
   background-color: var(--blueFondo);
   font-family: sans-serif;
+  overflow: hidden;
 }
 
 .container {
@@ -29,6 +30,7 @@ body {
 
 /* Bienvenida al usuario */
 header {
+  margin-top: 30px;
   width: auto;
   display: flex;
   justify-content: space-between;
@@ -109,7 +111,7 @@ main {
 
 
 /* cuadro flotante para operacion en curso */
-.operacion-en-curso {
+#operacion-en-curso {
   position: fixed;
   top: 60%;
   left: 50%;
@@ -122,26 +124,64 @@ main {
   box-shadow: 0 4px 2px -2px gray;
   border: solid 1px gray;
   border-radius: 6px;
+
 }
 
-.texto1 {
-  padding: 5% 0;
+#nombre-operacion {
   text-align: center;
   font-size: 2rem;
   font-weight: 600;
   color: var(--blueFuerte);
 }
 
+#instrucciones-operacion {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  font-size: 1.7rem;
+  color: var(--blueFuerte)
+}
+
+.div-confirmar {
+  display: flex;
+  justify-content: space-around;
+}
+
+.boton-confirmar {
+  min-width: 40%;
+  width: 40%;
+  height: 15%;
+
+  margin: 0 auto;
+  padding: 0;
+
+  box-shadow: 0 4px 2px -2px gray;
+  border: solid 1px gray;
+  border-radius: 6px;
+
+  font-size: 1.5rem;
+}
+
+.boton-confirmar:hover {
+  background-color: var(--blueFondo);
+}
 
 /* utility, ocultar secciones */
 .hide {
   display: none;
 }
 
-.div-body{
+
+
+/* --------------------------->codigo Yann<--------------------------------- */
+
+#div-body{
     background-color: #d0e3ec;
-    height:100%;
-    width: 100%;
+    height:100vh;
+    width: 100vw;
     margin:0;
     padding:0;
     display:flex;
@@ -151,7 +191,7 @@ main {
       justify-content: center;
       /* acomoda los elementos en el eje y  */
       align-items: center;
-
+    position: fixed;
 }
 
 
