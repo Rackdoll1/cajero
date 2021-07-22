@@ -2,28 +2,8 @@
 
 (function () {
 
-
-  // leer los inputs
-
-  var nDeCuenta=document.getElementById('nDeCuenta')
-  console.log(nDeCuenta)
-  var pin =document.getElementById('pin')
-
-  var btnGuardar=document.getElementById('guardar')
-
-
-  // lo que va hacer mi btn despues de click 
-  function clickEnGuardar(){
-    console.log(nDeCuenta.value);
-  }
-
-  // escuchar cuando alguien le da click
-
-  btnGuardar.addEventListener('click', clickEnGuardar)
-
-
-
-  class Usuario{
+   // creo mi clase usuario
+   class Usuario{
     constructor(nombre,password,numeroDeCuenta,saldo){
     this.nombre = nombre;
     this.password = password;
@@ -32,8 +12,79 @@
     }
   }
 
-  const usuario1 = new Usuario("ANDRES",1234,"9550001",2000)
+
+  //validar que los datos esten completos
+
+  const usuario1 = new Usuario("ANDRES",1234,9550001,2000)
   console.log(usuario1);
+
+
+  // leer los inputs
+
+  var nDeCuenta=document.getElementById('nDeCuenta')
+  console.log(nDeCuenta);
+
+  var pin =document.getElementById('pin')
+
+  var btnGuardar=document.getElementById('guardar')
+
+  // validar formulario
+  function validarFormulario(numberOfCount,pass){
+    if(numberOfCount=='' || pass=='') {
+      return false
+    } else {
+      return true
+    }
+  }
+
+
+
+  // lo que va hacer mi btn despues de click 
+  function clickEnGuardar(){
+    console.log(nDeCuenta.value);
+
+    console.log(pin.value);
+    var x= validarFormulario(nDeCuenta.value,pin.value)
+
+   if(x) {
+
+    alert('Formulario Completo');
+    
+    //AHORA SI EMPIEZO MI VALIDACION
+    if(nDeCuenta.value==usuario1.numeroDeCuenta && pin.value==usuario1.password){
+      console.log('ingreso exitoso')
+
+      //aqui entra mi otra interfaz
+      
+
+
+
+      
+    }
+
+    else{
+     
+      console.log('datos incorrectos')
+    }
+
+    } 
+  
+   else {
+    alert('Completa tus datos');
+    }
+    
+  }
+
+  // escuchar cuando alguien le da click
+
+  btnGuardar.addEventListener('click', clickEnGuardar)
+
+
+  //validar que los dtaos esten completos
+  
+
+
+ 
 
   let cuenta1 = {
     nombre: "Andres",
