@@ -7,24 +7,30 @@
     <title>Cajero</title>
   </head>
   <body>
-    <div id="contenedorPrincipal">
+    <div class="div-body">
+      <div id="contenedorPrincipal">
 
-      <h1>SUPER BANK</h1>
+      <center>
+      <h1 id="titleText">SUPER BANK</h1>
+      </center>
+
 
       <div class="inputs">
-        <h3>Digite su Numero de Cuenta</h3>
+        <h3>Digite su Numero de Cuenta:</h3>
         <input type="number" placeholder="Numero de Cuenta" id="nDeCuenta" required>
       </div>
 
-      <div class="inputs"></div>
-        <h3>Ingrese el pin </h3>
+      <br>
+
+      <div class="inputs">
+        <h3>Ingrese el pin:</h3>
         <input type="password" placeholder="Pin" id="pin" required>
       </div>
+      <br>
 
-      <button type="button" id="guardar">Guardar fake</button>
+      <button class='button' type="button" id="guardar">ENTER</button>
+      <br>
     </div>
-
-
     <div class="container">
       <header>
         <div class="esquinas-header">
@@ -58,11 +64,17 @@
       </main>
     </div>
 
+
+
+    <footer>
+      <p class="text-center">Copyright @2021 | Designed  by <a href="#">Andres & Yann Company</a></p>
+    </footer>
+
     <div class="operacion-en-curso">
       <div class="texto1">Operacion</div>
     </div>
 
     <script src="cajero.js"></script>
-    <script src="controladorCajero.js"></script>
   </body>
+
 </html>
