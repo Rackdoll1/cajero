@@ -41,25 +41,28 @@
       </section>
       <main>
         <div class="left-container">
-          <button class="boton-operacion">Consulta</button>
+          <button id="consultar" class="boton-operacion">Consultar Saldo</button>
 
-          <button class="boton-operacion">Retiro</button>
+          <button id="retirar" class="boton-operacion">Retirar</button>
 
-          <button class="boton-operacion">Depósito</button>
+          <button id="depositar" class="boton-operacion">Depositar</button>
         </div>
 
         <div class="right-container">
-          <button class="boton-operacion">Transferencia</button>
+          <button id="transferir" class="boton-operacion">Transferencias</button>
 
-          <button class="boton-operacion">Pago</button>
+          <button id="pagar" class="boton-operacion">Pagar</button>
 
-          <button class="boton-operacion">Salir</button>
+          <button id="salir" class="boton-operacion">Salir</button>
         </div>
       </main>
     </div>
 
-    <div class=""></div>
+    <div class="operacion-en-curso">
+      <div class="texto1">Operacion</div>
+    </div>
 
     <script src="cajero.js"></script>
+    <script src="controladorCajero.js"></script>
   </body>
 </html>

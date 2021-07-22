@@ -1,22 +1,14 @@
-<<<<<<< HEAD
-(function () {
+// leer los inputs, primera pantalla
 
-=======
+  const nDeCuenta=document.getElementById('nDeCuenta')
+  const pin =document.getElementById('pin')
+  const btnGuardar=document.getElementById('guardar')
 
-
-(function () {
-
-
-  // leer los inputs
-
-  var nDeCuenta=document.getElementById('nDeCuenta')
-  console.log(nDeCuenta)
-  var pin =document.getElementById('pin')
-
-  var btnGuardar=document.getElementById('guardar')
+// segunda pantalla, botones de operaciones
+  let
 
 
-  // lo que va hacer mi btn despues de click 
+  // lo que va hacer mi btn despues de click
   function clickEnGuardar(){
     console.log(nDeCuenta.value);
   }
@@ -24,8 +16,6 @@
   // escuchar cuando alguien le da click
 
   btnGuardar.addEventListener('click', clickEnGuardar)
-
-
 
   class Usuario{
     constructor(nombre,password,numeroDeCuenta,saldo){
@@ -39,13 +29,6 @@
   const usuario1 = new Usuario("ANDRES",1234,"9550001",2000)
   console.log(usuario1);
 
->>>>>>> Yann
-  let cuenta1 = {
-    nombre: "Andres",
-    password: "1234",
-    numeroDeCuenta: "12349502",
-    saldo: 2500
-  }
 
   class Cajero {
     constructor(cuenta){
@@ -82,7 +65,7 @@
 
   }
 
-const cajero = new Cajero(cuenta1)
+const cajero = new Cajero(usuario1)
 console.log(cajero);
 
 
@@ -95,6 +78,3 @@ console.log(cajero.retirarEfectivo(500));
 console.log(cajero.consultarSaldo());
 console.log(cajero.realizarTransferencia(4000, "12345"));
 console.log(cajero.realizarTransferencia(300, "12346"));
-
-
-})()

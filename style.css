@@ -1,6 +1,16 @@
+/* Con esto puedo establecer colores como variables */
+/* y usarlos en propiedades para que solo deba cambiar su valor aquí, */
+/* en lugar de tener que ir a cada propiedad a modificarlos, uno por uno */
+/* También puede hacerse con otros valores, como tamaños, etc */
 :root {
   --blueFondo: #d0e3ec;
+  --blueAcento: #677eb6;
+  --blueFuerte: #3e4c70;
+  --greyOperacion: rgb(239, 239, 239);
+  --greyBotonHover: rgb(212, 212, 212);
 }
+
+
 /* Estructura general */
 body {
   margin: 0;
@@ -16,6 +26,7 @@ body {
   grid-template-rows: auto auto 1fr;
 }
 
+
 /* Bienvenida al usuario */
 header {
   width: auto;
@@ -23,7 +34,7 @@ header {
   justify-content: space-between;
   align-items: center;
 
-  border-bottom: solid 20px #677eb6;
+  border-bottom: solid 20px var(--blueAcento);
 }
 
 header h1 {
@@ -44,6 +55,7 @@ header h2 {
   width: 45px;
 }
 
+
 /* instrucciones */
 .instrucciones {
   text-align: center;
@@ -53,6 +65,7 @@ header h2 {
 .instrucciones p {
   font-size: 2rem
 }
+
 
 /* operaciones disponibles al usuario */
 main {
@@ -75,7 +88,7 @@ main {
 }
 
 .boton-operacion {
-  min-width: 50%;
+  min-width: 40%;
   width: 80%;
   height: 15%;
 
@@ -91,5 +104,36 @@ main {
 }
 
 .boton-operacion:hover {
-  background-color: rgb(212, 212, 212)
+  background-color: var(--greyBotonHover);
+}
+
+
+/* cuadro flotante para operacion en curso */
+.operacion-en-curso {
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(-48%, -45%);
+
+  height: 60vh;
+  width: 45vw;
+
+  background-color: var(--greyOperacion);
+  box-shadow: 0 4px 2px -2px gray;
+  border: solid 1px gray;
+  border-radius: 6px;
+}
+
+.texto1 {
+  padding: 5% 0;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--blueFuerte);
+}
+
+
+/* utility, ocultar secciones */
+.hide {
+  display: none;
 }
