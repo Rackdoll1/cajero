@@ -1,5 +1,45 @@
+<<<<<<< HEAD
 (function () {
 
+=======
+
+
+(function () {
+
+
+  // leer los inputs
+
+  var nDeCuenta=document.getElementById('nDeCuenta')
+  console.log(nDeCuenta)
+  var pin =document.getElementById('pin')
+
+  var btnGuardar=document.getElementById('guardar')
+
+
+  // lo que va hacer mi btn despues de click 
+  function clickEnGuardar(){
+    console.log(nDeCuenta.value);
+  }
+
+  // escuchar cuando alguien le da click
+
+  btnGuardar.addEventListener('click', clickEnGuardar)
+
+
+
+  class Usuario{
+    constructor(nombre,password,numeroDeCuenta,saldo){
+    this.nombre = nombre;
+    this.password = password;
+    this.numeroDeCuenta = numeroDeCuenta;
+    this.saldo = saldo;
+    }
+  }
+
+  const usuario1 = new Usuario("ANDRES",1234,"9550001",2000)
+  console.log(usuario1);
+
+>>>>>>> Yann
   let cuenta1 = {
     nombre: "Andres",
     password: "1234",
