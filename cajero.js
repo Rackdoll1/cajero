@@ -39,7 +39,7 @@
 
 
 
-  // lo que va hacer mi btn despues de click 
+  // lo que va hacer mi btn despues de click
   function clickEnGuardar(){
     console.log(nDeCuenta.value);
 
@@ -49,30 +49,30 @@
    if(x) {
 
     alert('Formulario Completo');
-    
+
     //AHORA SI EMPIEZO MI VALIDACION
     if(nDeCuenta.value==usuario1.numeroDeCuenta && pin.value==usuario1.password){
       console.log('ingreso exitoso')
 
       //aqui entra mi otra interfaz
-      
 
 
 
-      
+
+
     }
 
     else{
-     
-      console.log('datos incorrectos')
+
+      alert('Formulario Completo');
     }
 
-    } 
-  
+    }
+
    else {
     alert('Completa tus datos');
     }
-    
+
   }
 
   // escuchar cuando alguien le da click
@@ -81,10 +81,10 @@
 
 
   //validar que los dtaos esten completos
-  
 
 
- 
+
+
 
   let cuenta1 = {
     nombre: "Andres",
