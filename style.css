@@ -169,12 +169,14 @@ main {
   background-color: var(--blueFondo);
 }
 
-/* utility, ocultar secciones */
+/* utility*/
 .hide {
   display: none;
 }
 
-
+.center-text {
+  text-align: center;
+}
 
 /* --------------------------->codigo Yann<--------------------------------- */
 

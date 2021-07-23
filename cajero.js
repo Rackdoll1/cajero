@@ -61,6 +61,8 @@
         let bienvenida = document.getElementById('bienvenida')
 
         bienvenida.innerHTML = `Hola ${usuario1.nombre}`
+        nDeCuenta.value = ''
+        pin.value = ''
 
     }
 
@@ -120,9 +122,12 @@
     realizarTransferencia(cantidad, numeroDeCuenta) {
       if (cantidad > this.cuenta.saldo) {
         return 'Saldo insuficiente para realizar esta operación'
-      }else {
+      }else if (numeroDeCuenta === '' || cantidad === 0){
+        return 'Datos incorrectos'
+      }
+      else {
         this.cuenta.saldo -= cantidad
-        return `Se transfirió la cantidad de $${cantidad}\na la cuenta con numero ${numeroDeCuenta}`
+        return `Se transfirió la cantidad de $${cantidad} a la cuenta "${numeroDeCuenta}"`
       }
     }
 
@@ -183,7 +188,7 @@
 
     let input = document.createElement('input')
     input.setAttribute('input', 'number')
-    input.setAttribute('placeholder', 'Ingrese cantidad a retirar')
+    input.setAttribute('placeholder', 'Cantidad a retirar')
     input.setAttribute('min', 1)
     c[1].appendChild(input)
 
@@ -193,8 +198,9 @@
     c[1].appendChild(confirmar)
 
     confirmar.addEventListener('click', function(){
-      if(c[1].children.length >= 4) {
-        c[1].children.removeChild(c[1].children.lastChild)
+      // si ya hay un tag p con un resultado anterior, se elimina
+      if(c[1].children.length > 3) {
+        c[1].removeChild(c[1].lastChild)
       }
       let resultado = document.createElement('p')
       resultado.textContent = cajero.retirarEfectivo(Number(input.value))
@@ -217,7 +223,7 @@
 
     let input = document.createElement('input')
     input.setAttribute('input', 'number')
-    input.setAttribute('placeholder', 'Ingrese cantidad a depositar')
+    input.setAttribute('placeholder', 'Cantidad a depositar')
     input.setAttribute('min', 1)
     c[1].appendChild(input)
 
@@ -227,8 +233,8 @@
     c[1].appendChild(confirmar)
 
     confirmar.addEventListener('click', function(){
-      if(c[1].children.length >= 4) {
-        c[1].children.removeChild(c[1].children.lastChild)
+      if(c[1].children.length > 3) {
+        c[1].removeChild(c[1].lastChild)
       }
       let resultado = document.createElement('p')
       resultado.textContent = cajero.depositarEfectivo(Number(input.value))
@@ -236,6 +242,97 @@
       input.value = ''
     })
     clickVisible()
+  }
+
+  // funcion especifica para mostrar el contenido de la operacion "transferir"
+  const operacionTransferir = () => {
+    const c = pantallaOperacion.children
+    retirarChildren(c)
+    let p = document.createElement('p')
+    p.textContent = transferir.innerHTML
+    c[0].appendChild(p)
+
+    let instruccion = document.createElement('p')
+    instruccion.setAttribute('class', 'center-text')
+    instruccion.textContent = 'Ingrese cantidad y numero de cuenta para transferir:'
+    c[1].appendChild(instruccion)
+
+    let input = document.createElement('input')
+    input.setAttribute('input', 'number')
+    input.setAttribute('placeholder', 'Cantidad a transferir')
+    input.setAttribute('min', 1)
+    c[1].appendChild(input)
+
+    let input2 = document.createElement('input')
+    input2.setAttribute('input', 'number')
+    input2.setAttribute('placeholder', 'Numero de cuenta')
+    c[1].appendChild(input2)
+
+    let confirmar = document.createElement('button')
+    confirmar.setAttribute('class', 'boton-confirmar')
+    confirmar.innerHTML = 'Confirmar'
+    c[1].appendChild(confirmar)
+
+    confirmar.addEventListener('click', function(){
+      if(c[1].children.length > 4) {
+        c[1].removeChild(c[1].lastChild)
+      }
+      let resultado = document.createElement('p')
+      resultado.setAttribute('class', 'center-text')
+      resultado.textContent = cajero.realizarTransferencia(Number(input.value), input2.value)
+      c[1].appendChild(resultado)
+      input.value = ''
+      input2.value = ''
+    })
+    clickVisible()
+  }
+
+  // funcion especifica para mostrar el contenido de la operacion "pagar"
+  const operacionPagar = () => {
+    const c = pantallaOperacion.children
+    retirarChildren(c)
+    let p = document.createElement('p')
+    p.textContent = pagar.innerHTML
+    c[0].appendChild(p)
+
+    let instruccion = document.createElement('p')
+    instruccion.setAttribute('class', 'center-text')
+    instruccion.textContent = 'Ingrese la cantidad y el servicio a pagar:'
+    c[1].appendChild(instruccion)
+
+    let input = document.createElement('input')
+    input.setAttribute('input', 'number')
+    input.setAttribute('placeholder', 'Cantidad a pagar')
+    input.setAttribute('min', 1)
+    c[1].appendChild(input)
+
+    let input2 = document.createElement('input')
+    input2.setAttribute('input', 'number')
+    input2.setAttribute('placeholder', 'Servicio a pagar')
+    c[1].appendChild(input2)
+
+    let confirmar = document.createElement('button')
+    confirmar.setAttribute('class', 'boton-confirmar')
+    confirmar.innerHTML = 'Confirmar'
+    c[1].appendChild(confirmar)
+
+    confirmar.addEventListener('click', function(){
+      if(c[1].children.length > 4) {
+        c[1].removeChild(c[1].lastChild)
+      }
+      let resultado = document.createElement('p')
+      resultado.setAttribute('class', 'center-text')
+      resultado.textContent = cajero.realizarTransferencia(Number(input.value), input2.value)
+      c[1].appendChild(resultado)
+      input.value = ''
+      input2.value = ''
+    })
+    clickVisible()
+  }
+
+  // funcion para salir del cajero
+  const operacionSalir = () => {
+    pantallaDeInicio.style.display = 'flex'
   }
 
   // funcion para quitar cualquier contenido que haya quedado en euna operacion pasada
@@ -253,6 +350,9 @@
   consultar.addEventListener('click', operacionConsultar)
   retirar.addEventListener('click', operacionRetirar)
   depositar.addEventListener('click', operacionDepositar)
+  transferir.addEventListener('click', operacionTransferir)
+  pagar.addEventListener('click', operacionPagar)
+  salir.addEventListener('click', operacionSalir)
 
 
   // confirmar.addEventListener('click', )
