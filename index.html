@@ -7,35 +7,38 @@
     <title>Cajero</title>
   </head>
   <body>
+    <!-- pantalla de bienvenida para ingresar a la cuenta -->
     <div id="div-body">
       <div id="contenedorPrincipal">
 
-      <center>
-      <h1 id="titleText">SUPER BANK</h1>
-      </center>
+        <center>
+          <h1 id="titleText">SUPER BANK</h1>
+        </center>
 
 
-      <div class="inputs">
-        <h3>Digite su Numero de Cuenta:</h3>
-        <input type="number" placeholder="Numero de Cuenta" id="nDeCuenta" required>
+        <div class="inputs">
+          <h3>Digite su Numero de Cuenta:</h3>
+          <input type="number" placeholder="Numero de Cuenta" id="nDeCuenta" required>
+        </div>
+
+        <br>
+
+        <div class="inputs">
+          <h3>Ingrese el pin:</h3>
+          <input type="password" placeholder="Pin" id="pin" required>
+        </div>
+
+        <br>
+
+        <button class='button' type="button" id="guardar">ENTER</button>
+        <br>
       </div>
-
-      <br>
-
-      <div class="inputs">
-        <h3>Ingrese el pin:</h3>
-        <input type="password" placeholder="Pin" id="pin" required>
-      </div>
-      <br>
-
-      <button class='button' type="button" id="guardar">ENTER</button>
-      <br>
+      <footer>
+        <p class="text-center">Copyright @2021 | Designed  by <a href="#">Andres & Yann Company</a></p>
+      </footer>
     </div>
-    <footer>
-      <p class="text-center">Copyright @2021 | Designed  by <a href="#">Andres & Yann Company</a></p>
-    </footer>
-  </div>
 
+    <!-- pantalla de operaciones una vez que el usuario ingresa a su cuenta -->
     <div class="container">
       <header>
         <div class="esquinas-header">
@@ -51,34 +54,33 @@
         <p>Pulse la tecla de la operación que desea realizar</p>
       </section>
       <main>
+        <!-- operaciones del lado izquierdo de la pantalla -->
         <div class="left-container">
           <button id="consultar" class="boton-operacion">Consultar Saldo</button>
-
           <button id="retirar" class="boton-operacion">Retirar</button>
-
           <button id="depositar" class="boton-operacion">Depositar</button>
         </div>
-
+        <!-- operaciones del lado derecho de la pantalla -->
         <div class="right-container">
           <button id="transferir" class="boton-operacion">Transferencias</button>
-
           <button id="pagar" class="boton-operacion">Pagar</button>
-
           <button id="salir" class="boton-operacion">Salir</button>
         </div>
       </main>
     </div>
 
-
+    <!-- ventana que muestra la operacion en curso seleccionada por el usuario -->
+    <!-- inicialmente esta oculta y se despliega cuando el usuario selecciona una operacion -->
+    <!-- el contenido de esta ventana se crea dinamicamente para cada operacion-->
     <div id="operacion-en-curso" class="hide">
-        <div id="nombre-operacion"></div>
-        <div id="instrucciones-operacion">
-          <!-- <input id="input-operacion-cajero" type="number" placeholder="Numero de Cuenta" min="1"> -->
-        </div>
-        <div class="div-confirmar">
-          <!-- <button id="boton-confirmar" class="boton-confirmar">Confirmar</button> -->
-          <button id="boton-cancelar" class="boton-confirmar">Cancelar</button>
-        </div>
+    <!-- el contenido de los dos primeros div será modificado y actualizado constantemente-->
+      <div id="nombre-operacion"></div>
+      <div id="instrucciones-operacion"></div>
+      <div class="div-confirmar">
+        <!-- todas las operaciones incluyen un boton para cancelar operacion, -->
+        <!-- pero en otras se creará un nuevo boton para confirmar dicha operacion -->
+        <button id="boton-cancelar" class="boton-confirmar">Cancelar</button>
+      </div>
     </div>
 
     <script src="cajero.js"></script>
